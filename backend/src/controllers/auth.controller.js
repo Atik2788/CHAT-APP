@@ -21,6 +21,13 @@ export const singup = async (req, res) =>{
             email,
             password : hashPassword
         })
+
+        if(newUser){
+            // generate jwt token here
+
+        } else{
+            res.status(400).json({message: "Invalid user data"});
+        }
         
     } catch (error) {
         
