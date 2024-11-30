@@ -52,8 +52,17 @@ export const singup = async (req, res) => {
 
 
 // login
-export const login = (req, res) => {
-  res.send("Login route");
+export const login = async (req, res) => {
+  const {email, password} = req.body;
+  try {
+    const user = await User.findOne({email})
+
+    if(!user){
+      return res.status(404).json({message: "Invalid credentials"})
+    }
+  } catch (error) {
+    
+  }
 };
 
 
