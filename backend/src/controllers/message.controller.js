@@ -56,7 +56,14 @@ export const sendMessage = async(req, res) =>{
         })
 
         await newMessage.save();
+
+        // todo: realtime functionality goes here => socket.io 
+
+        res.status(201).json(newMessage)
+
+
     } catch (error) {
-        
+        console.log("Error in getMessages", error.message);
+        res.status(500).json({message: "Internal server error"})
     }
 }
