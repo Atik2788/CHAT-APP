@@ -5,8 +5,19 @@ import SignUpPage from "./pages/SignUpPage";
 import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./ProfilePage";
 import HomePage from "./HomePage";
+import { axiosInstance } from "./lib/asiox";
+import { useAuthStore } from "./store/useAuthStore";
+import { useEffect } from "react";
 
 const App = () => {
+  // axiosInstance.get()
+  const {authUser, checkAuth} = useAuthStore()
+
+  useEffect(() =>{
+    checkAuth()
+  }, [checkAuth])
+
+  console.log({authUser});
   return (
     <div>
       <Navbar/>
