@@ -5,7 +5,7 @@ import SettingsPage from "./pages/SettingsPage";
 import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./ProfilePage";
 import HomePage from "./HomePage";
-import { axiosInstance } from "./lib/asiox";
+import { axiosInstance } from "./lib/axios";
 import { useAuthStore } from "./store/useAuthStore";
 import { useEffect } from "react";
 import { Loader } from "lucide-react";
