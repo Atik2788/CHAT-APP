@@ -28,7 +28,7 @@ const App = () => {
     );
 
   return (
-    <div datatype="">
+    <div data-theme="aqua">
       <Navbar />
 
       <Routes>
