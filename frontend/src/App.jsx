@@ -28,7 +28,7 @@ const App = () => {
     );
 
   return (
-    <div>
+    <div datatype="">
       <Navbar />
 
       <Routes>
@@ -51,7 +51,7 @@ const App = () => {
         />
       </Routes>
 
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
