@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useChatStore } from "../store/useChatStore"
 import ChatHeader from "./ChatHeader";
 import MessageInput from "./MessageInput";
-import MessageSkeleton from "./MessageSkeleton";
+import MessageSkeleton from "./skeletons/MessageSkeleton";
 
 const ChatContainer = () => {
 
@@ -27,7 +27,6 @@ const ChatContainer = () => {
       <ChatHeader/>
 
       <p>message...</p>
-
       <MessageInput/>
 
     </div>
