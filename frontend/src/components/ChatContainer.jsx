@@ -10,7 +10,7 @@ const ChatContainer = () => {
 
     
   useEffect(() =>{
-    getMessages(selectedUser._id)
+    getMessages(selectedUser?._id)
   }, [selectedUser._id, getMessages])
 
   

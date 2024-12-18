@@ -16,13 +16,13 @@ export const getUsersForSidebar = async(req, res) =>{
 
 export const getMessages = async(req, res) =>{
     try {
-        const {id: userToChatId} = req.params;
+        const { id: userToChatId } = req.params;
         const myId = req.user._id;
 
         // finde message
         const message = await Message.find({
             $or:[
-                {senderId:myId, receverId:userToChatId },
+                {senderId:myId, receverId: userToChatId },
                 {senderId: userToChatId, receverId: myId}
             ]
         })
@@ -44,26 +44,27 @@ export const sendMessage = async(req, res) =>{
         let  imageUrl;
         if(image){
             // upload base64 image to cloudinary
-            const uploadResponse = await cloudinary.uploader(image);
+            const uploadResponse = await cloudinary.uploader.upload(image);
             imageUrl = uploadResponse.secure_url;
         }
+
 
         const newMessage = new Message({
             senderId,
             receverId,
             text,
             image: imageUrl,
-        })
-
-        await newMessage.save();
+          });
+      
+          await newMessage.save();
 
         // todo: realtime functionality goes here => socket.io 
 
-        res.status(201).json(newMessage)
+        res.status(201).json(newMessage);
 
 
     } catch (error) {
-        console.log("Error in getMessages", error.message);
-        res.status(500).json({message: "Internal server error"})
+        console.log("Error in sendMessages", error.message);
+        res.status(500).json({message: "Internal server error send message"})
     }
 }
