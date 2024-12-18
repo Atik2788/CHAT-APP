@@ -24,9 +24,14 @@ const MessageInput = () => {
         reader.readAsDataURL(file)
     }
 
-    const removeImage = () =>{};
+    const removeImage = () =>{
+        setImagePreview(null);
+        if(fileInputRef.current) fileInputRef.current.value = "";
+    };
 
-    const handleSendMessage = async(e) =>{}
+    const handleSendMessage = async(e) =>{
+        
+    }
 
     return (
         <div className="p-4 w-full">
