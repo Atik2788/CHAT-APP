@@ -47,16 +47,7 @@ const ChatContainer = () => {
             <div className="chat-header mb-1">
               <time className="text-xs opacity-50 ml-1">{formatMessageTime(message.createdAt)}</time>
             </div>
-            <div className="chat-bubble ">
-              {message.image && (
-                <img 
-                  src={message?.image}
-                  alt="Attachment"
-                  className="sm:max-w-[200px] rounded-md mb-5" 
-                />
-              )}
-              {message.text && <p>{message.text}</p>}
-            </div>
+
           </div>
         ))}
       </div>
