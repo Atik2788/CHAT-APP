@@ -10,7 +10,7 @@ const ChatContainer = () => {
 
   const {messages, getMessages, isMessagesLoding, selectedUser } = useChatStore();
   const {authUser} = useAuthStore()
-  console.log(messages);
+  // console.log(messages);
 
     
   useEffect(() =>{
